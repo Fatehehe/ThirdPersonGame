@@ -20,8 +20,7 @@ public class EnemyIdleState : EnemyBaseState
         Move(deltaTime);
         if (IsInChaseRange())
         {
-            //transition to chasing statae
-            Debug.Log("In Range");
+            stateMachine.SwitchState(new EnemyChasingState(stateMachine));
             return;
         }
 
