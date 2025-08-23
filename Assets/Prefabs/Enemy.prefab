@@ -1123,11 +1123,12 @@ MonoBehaviour:
   <Agent>k__BackingField: {fileID: 6867195068624886579}
   <Weapon>k__BackingField: {fileID: 3530395998609531240}
   <Health>k__BackingField: {fileID: 6324736788280833534}
+  <Target>k__BackingField: {fileID: 5859042389736202300}
   <MovementSpeed>k__BackingField: 3
   <PlayerChasingRange>k__BackingField: 10
   <AttackRange>k__BackingField: 1.5
   <AttackDamage>k__BackingField: 20
-  <AttackKnockback>k__BackingField: 20
+  <AttackKnockback>k__BackingField: 10
 --- !u!114 &3436453346262985641
 MonoBehaviour:
   m_ObjectHideFlags: 0

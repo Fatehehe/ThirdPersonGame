@@ -16,7 +16,6 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public float RotationDamping { get; private set; }
     [field: SerializeField] public Attack[] Attacks { get; private set; }
 
-
     public Transform MainCameraTransform { get; private set; }
 
     // Start is called before the  first frame update
@@ -29,16 +28,21 @@ public class PlayerStateMachine : StateMachine
     private void OnEnable()
     {
         Health.OnTakeDamage += HandleTakeDamage;
+        Health.OnDie += HandleDie;
     }
 
     void OnDisable()
     {
         Health.OnTakeDamage -= HandleTakeDamage;
-
+        Health.OnDie -= HandleDie;
     }
 
     private void HandleTakeDamage()
     {
         SwitchState(new PlayerImpactState(this));
+    }
+    private void HandleDie()
+    {
+        SwitchState(new PlayerDeadState(this));
     }
 }
